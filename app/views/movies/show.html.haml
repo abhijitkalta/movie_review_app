@@ -1,0 +1,34 @@
+.panel.panel-default
+ .panel-body
+  .row
+   .col-md-4
+    = image_tag @movie.image.url(:medium)
+    .table-responsive
+     %table.table-responsive
+      %tbody
+       %%tr
+        %td.reviews
+         %strong.review_title Title:
+         = @movie.title
+        %%tr
+         %td.reviews
+          %strong Description:
+          = @movie.description
+        %%tr
+         %td.reviews
+          %strong length:
+          = @movie.movie_length
+        %%tr
+         %td.reviews
+          %strong Director:
+          = @movie.director
+        %%tr
+         %td.reviews
+          %strong.star_rating Rating:
+          = @movie.rating
+
+
+
+= link_to 'Edit', edit_movie_path(@movie)
+
+= link_to 'Back', movies_path
