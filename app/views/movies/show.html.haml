@@ -26,6 +26,19 @@
          %td.reviews
           %strong.star_rating Rating:
           = @movie.rating
+     = link_to "Write a review", new_movie_review_path(@movie)
+   .col-md-7.col-md-offset-1
+    %h1.review_title= @movie.title
+    %p= @movie.description
+    - if @movie.reviews.blank?
+     %h3 "No reviews yet, would you like to add the first?"
+     = link_to "Write review", new_movie_review_path(@movie), class: "btn btn-danger"
+    - else
+     - @movie.reviews.each do |review|
+      .reviews
+       %p= review.rating
+       %p= review.comment
+
 
 
 
