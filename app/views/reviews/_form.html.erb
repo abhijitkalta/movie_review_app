@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :rating %>
+    <div id="star_rating"></div>
     <%= f.input :comment %>
   </div>
 
@@ -10,3 +10,8 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+<script>
+ $('#star_rating').raty({
+   scoreName: 'review[rating]'
+ })
+</script>
